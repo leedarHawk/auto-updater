@@ -1,0 +1,120 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-native-auto-updater@^0.2.5",
+        "scope": null,
+        "escapedName": "react-native-auto-updater",
+        "name": "react-native-auto-updater",
+        "rawSpec": "^0.2.5",
+        "spec": ">=0.2.5 <0.3.0",
+        "type": "range"
+      },
+      "/Volumes/app/hawk_home/workspace/quanta/mmm-android"
+    ]
+  ],
+  "_cnpm_publish_time": 1456244540472,
+  "_from": "react-native-auto-updater@>=0.2.5 <0.3.0",
+  "_id": "react-native-auto-updater@0.2.5",
+  "_inCache": true,
+  "_location": "/react-native-auto-updater",
+  "_nodeVersion": "4.1.1",
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/react-native-auto-updater-0.2.5.tgz_1456244536491_0.39735244773328304"
+  },
+  "_npmUser": {
+    "name": "rahuljiresal",
+    "email": "rahul.jiresal@gmail.com"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-auto-updater@^0.2.5",
+    "scope": null,
+    "escapedName": "react-native-auto-updater",
+    "name": "react-native-auto-updater",
+    "rawSpec": "^0.2.5",
+    "spec": ">=0.2.5 <0.3.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/react-native-auto-updater/download/react-native-auto-updater-0.2.5.tgz",
+  "_shasum": "258d4a5d9757c1254a130d9d4b35fcc2531fa9e1",
+  "_shrinkwrap": null,
+  "_spec": "react-native-auto-updater@^0.2.5",
+  "_where": "/Volumes/app/hawk_home/workspace/quanta/mmm-android",
+  "author": {
+    "name": "Rahul Jiresal",
+    "email": "rahul@aerofs.com",
+    "url": "https://github.com/rahuljiresal"
+  },
+  "bugs": {
+    "url": "https://github.com/aerofs/react-native-auto-updater/issues"
+  },
+  "dependencies": {},
+  "description": "A library to manage dynamic updates to React Native apps. Available as an NPM Package.",
+  "devDependencies": {
+    "react-native": ">=0.18.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "258d4a5d9757c1254a130d9d4b35fcc2531fa9e1",
+    "size": 29193,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/react-native-auto-updater/download/react-native-auto-updater-0.2.5.tgz"
+  },
+  "files": [
+    "ios/ReactNativeAutoUpdater.xcodeproj",
+    "react-native-auto-updater.js",
+    "README.md",
+    "ios/ReactNativeAutoUpdater/ReactNativeAutoUpdater.h",
+    "ios/ReactNativeAutoUpdater/ReactNativeAutoUpdater.m",
+    "ios/ReactNativeAutoUpdater/StatusBarNotification.h",
+    "ios/ReactNativeAutoUpdater/StatusBarNotification.m",
+    "android/build.gradle",
+    "android/src/main/AndroidManifest.xml",
+    "android/src/main/res/values/strings.xml",
+    "android/src/main/java/com/aerofs/reactnativeautoupdater/ReactNativeAutoUpdater.java",
+    "android/src/main/java/com/aerofs/reactnativeautoupdater/ReactNativeAutoUpdaterActivity.java",
+    "android/src/main/java/com/aerofs/reactnativeautoupdater/ReactNativeAutoUpdaterPackage.java",
+    "android/src/main/java/com/aerofs/reactnativeautoupdater/ReactNativeAutoUpdaterModule.java",
+    "android/src/main/java/com/aerofs/reactnativeautoupdater/Version.java"
+  ],
+  "gitHead": "e5f4f373e23d4bcb12e7c6f484719361e7c58a09",
+  "homepage": "https://github.com/aerofs/react-native-auto-updater#readme",
+  "keywords": [
+    "react-native",
+    "updates",
+    "dynamic",
+    "ios",
+    "android"
+  ],
+  "license": "MIT",
+  "main": "react-native-auto-updater.js",
+  "maintainers": [
+    {
+      "name": "originalgremlin",
+      "email": "barry.shapira@gmail.com"
+    },
+    {
+      "name": "rahuljiresal",
+      "email": "rahul.jiresal@gmail.com"
+    }
+  ],
+  "name": "react-native-auto-updater",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "react-native": ">=0.18.0"
+  },
+  "publish_time": 1456244540472,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aerofs/react-native-auto-updater.git"
+  },
+  "scripts": {},
+  "version": "0.2.5"
+}
