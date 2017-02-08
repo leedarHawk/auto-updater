@@ -167,8 +167,7 @@ static bool isFirstAccess = YES;
             if ([data writeToFile:filename atomically:YES]) {
                 [[NSUserDefaults standardUserDefaults] setObject:localMetadata forKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
             }
-        }
-        if ([savedMetadata objectForKey:@"appVersion"] < [localMetadata objectForKey:@"appVersion"]){
+        }else if ([savedMetadata objectForKey:@"appVersion"] < [localMetadata objectForKey:@"appVersion"]){
             [[NSUserDefaults standardUserDefaults] setObject:localMetadata forKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
         }
     }
@@ -209,8 +208,11 @@ static bool isFirstAccess = YES;
     NSDictionary* currentMetadata = [[NSUserDefaults standardUserDefaults] objectForKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
     NSLog(@"%@", currentMetadata);
     NSLog(@"%@", self.updateMetadata);
-    int currentAppVersion = (int)([[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] floatValue]*100);
+    NSMutableString* versionString =[NSMutableString stringWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    versionString = [versionString stringByReplacingOccurrencesOfString:@"." withString:@""];
+    int currentAppVersion = [versionString intValue];
     NSLog(@"%d", currentAppVersion);
+    //if coming app version higher than current app version or current appVersion higher than bundle version.
     if ([currentMetadata objectForKey:@"appVersion"]< [self.updateMetadata objectForKey:@"appVersion"] ||
         [[currentMetadata objectForKey:@"appVersion"] intValue]>currentAppVersion){
         if ([self.delegate respondsToSelector:@selector(showUpgrade:)]) {
@@ -236,6 +238,7 @@ static bool isFirstAccess = YES;
                 [StatusBarNotification showWithMessage:NSLocalizedString(@"Already Up to Date.", nil) backgroundColor:[StatusBarNotification successColor] autoHide:YES];
             });
         }
+        NSLog(@"already updated");
     }
 }
 
