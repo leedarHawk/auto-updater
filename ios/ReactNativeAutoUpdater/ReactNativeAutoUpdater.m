@@ -104,7 +104,9 @@ static bool isFirstAccess = YES;
 
 - (void)initializeWithUpdateMetadataUrl:(NSURL*)url defaultJSCodeLocation:(NSURL*)defaultJSCodeLocation defaultMetadataFileLocation:(NSURL*)metadataFileLocation {
     self.metadataUrl = url;
+    //local js file location
     self.defaultJSCodeLocation = defaultJSCodeLocation;
+    //local meta file location
     self.defaultMetadataFileLocation = metadataFileLocation;
     
     [self compareSavedMetadataAgainstContentsOfFile: self.defaultMetadataFileLocation];
@@ -160,15 +162,13 @@ static bool isFirstAccess = YES;
         [[NSUserDefaults standardUserDefaults] setObject:localMetadata forKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
     }
     else {
-        if ([[savedMetadata objectForKey:@"version"] compare:[localMetadata objectForKey:@"version"] options:NSNumericSearch] == NSOrderedAscending) {
+        if ([[savedMetadata objectForKey:@"version"] compare:[localMetadata objectForKey:@"version"] options:NSNumericSearch] == NSOrderedAscending || [savedMetadata objectForKey:@"appVersion"] < [localMetadata objectForKey:@"appVersion"]) {
             NSData* data = [NSData dataWithContentsOfURL:self.defaultJSCodeLocation];
             NSString* filename = [NSString stringWithFormat:@"%@/%@", [self createCodeDirectory], @"main.jsbundle"];
             
             if ([data writeToFile:filename atomically:YES]) {
                 [[NSUserDefaults standardUserDefaults] setObject:localMetadata forKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
             }
-        }else if ([savedMetadata objectForKey:@"appVersion"] < [localMetadata objectForKey:@"appVersion"]){
-            [[NSUserDefaults standardUserDefaults] setObject:localMetadata forKey:ReactNativeAutoUpdaterCurrentJSCodeMetadata];
         }
     }
     self.initializationOK = YES;
