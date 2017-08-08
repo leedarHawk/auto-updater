@@ -213,7 +213,7 @@ static bool isFirstAccess = YES;
     int currentAppVersion = [versionString intValue];
     NSLog(@"%d", currentAppVersion);
     //if coming app version higher than current app version or current appVersion higher than bundle version.
-    if ([currentMetadata objectForKey:@"appVersion"]< [self.updateMetadata objectForKey:@"appVersion"] ||
+    if ([[currentMetadata objectForKey:@"appVersion"] intValue]< [[self.updateMetadata objectForKey:@"appVersion"] intValue] ||
         [[currentMetadata objectForKey:@"appVersion"] intValue]>currentAppVersion){
         if ([self.delegate respondsToSelector:@selector(showUpgrade:)]) {
             [self.delegate showUpgrade:self.storeURL];
