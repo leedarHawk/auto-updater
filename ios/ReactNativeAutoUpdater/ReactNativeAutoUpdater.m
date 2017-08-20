@@ -209,8 +209,7 @@ static bool isFirstAccess = YES;
     NSLog(@"%@", currentMetadata);
     NSLog(@"%@", self.updateMetadata);
     NSMutableString* versionString =[NSMutableString stringWithString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    versionString = [versionString stringByReplacingOccurrencesOfString:@"." withString:@""];
-    int currentAppVersion = [versionString intValue];
+    int currentAppVersion = [versionString floatValue]*100;
     NSLog(@"%d", currentAppVersion);
     //if coming app version higher than current app version or current appVersion higher than bundle version.
     if ([[currentMetadata objectForKey:@"appVersion"] intValue]< [[self.updateMetadata objectForKey:@"appVersion"] intValue] ||
